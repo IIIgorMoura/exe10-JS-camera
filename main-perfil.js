@@ -163,30 +163,43 @@ function abrirCamera() {
         })
 };
 
+let downloadLink;
+const perfilImg = document.getElementById('perfil-img');
+
 function tirarFoto() {
     const areaVideo = document.getElementById('camera');
-    const areaFoto = document.getElementById('areaFoto');
     const canvas = document.createElement('canvas');
 
     canvas.width = areaVideo.videoWidth;
     canvas.height = areaVideo.videoHeight;
 
     const context = canvas.getContext('2d');
-
-    context.drawImage(areaVideo, 0, 0, canvas.width, canvas.height)
+    context.drawImage(areaVideo, 0, 0, canvas.width, canvas.height);
 
     const imageDataURL = canvas.toDataURL();
     const fotoDiv = document.getElementById('foto');
 
     fotoDiv.style.backgroundImage = `url(${imageDataURL})`;
 
-    const downloadLink = document.createElement('a');
+    // armazena a foto no localStorage
+    localStorage.setItem('fotoPerfil', imageDataURL);
+
+    // def img do perfil com a foto capturada
+    perfilImg.style.backgroundImage = `url(${imageDataURL})`;
+    perfilImg.style.backgroundSize = "cover";
+
+    // remove o botão antigo
+    if (downloadLink) {
+        downloadLink.remove();
+    }
+
+    downloadLink = document.createElement('a');
     downloadLink.href = imageDataURL;
     downloadLink.download = 'foto.png';
-    downloadLink.textContent = 'Clique para baixar';
-    downloadLink.className = "botaoPopup";
+    downloadLink.textContent = 'Clique para salvar';
+    downloadLink.className = 'botaoPopup botaoPopupMaior';
 
-    document.body.areaFoto.appendChild(downloadLink);
+    document.querySelector('#areaFoto').appendChild(downloadLink);
 }
 
 function fecharCamera() {
@@ -197,3 +210,29 @@ function fecharCamera() {
     areaVideo.srcObject = null;
     mediaStream = null;
 }
+
+// verif e carregar foto do localStorage
+document.addEventListener("DOMContentLoaded", function () {
+    const fotoSalva = localStorage.getItem('fotoPerfil');
+
+    if (fotoSalva) {
+        const fotoDiv = document.getElementById('foto');
+        fotoDiv.style.backgroundImage = `url(${fotoSalva})`;
+
+        perfilImg.style.backgroundImage = `url(${fotoSalva})`;
+        perfilImg.style.backgroundSize = "cover";
+
+        // botao para caso exista no localStorage
+        downloadLink = document.createElement('a');
+        downloadLink.href = fotoSalva;
+        downloadLink.download = 'foto.png';
+        downloadLink.textContent = 'Salvar imagem';
+        downloadLink.className = 'botaoPopup botaoPopupMaior';
+        // downloadLink.className = 'botaoPopupMaior';
+
+        document.querySelector('#areaFoto').appendChild(downloadLink);
+    }
+});
+
+
+

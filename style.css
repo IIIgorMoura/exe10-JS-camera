@@ -2271,7 +2271,14 @@ circle:nth-child(2) {
     margin: 0px 10px;
 }
 
+#botoesPopup {
+    display: flex;
+    flex-direction: row;
+}
+
 .botaoPopup {
+    display: flex;
+
     width: 100px;
     height: 50px;
     
@@ -2281,12 +2288,21 @@ circle:nth-child(2) {
     border-radius: 15px;
 
     margin: 0px 10px;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
 }
 
-#botoesPopup {
-    display: flex;
-    flex-direction: row;
+.botaoPopupMaior {
+    width: 150px;
+
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 #foto {
     height: 300px;
@@ -2327,4 +2343,7 @@ circle:nth-child(2) {
 #areaFoto {
     display: flex;
     flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
 }
