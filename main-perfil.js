@@ -165,6 +165,7 @@ function abrirCamera() {
 
 function tirarFoto() {
     const areaVideo = document.getElementById('camera');
+    const areaFoto = document.getElementById('areaFoto');
     const canvas = document.createElement('canvas');
 
     canvas.width = areaVideo.videoWidth;
@@ -183,7 +184,9 @@ function tirarFoto() {
     downloadLink.href = imageDataURL;
     downloadLink.download = 'foto.png';
     downloadLink.textContent = 'Clique para baixar';
-    document.body.appendChild(downloadLink);
+    downloadLink.className = "botaoPopup";
+
+    document.body.areaFoto.appendChild(downloadLink);
 }
 
 function fecharCamera() {

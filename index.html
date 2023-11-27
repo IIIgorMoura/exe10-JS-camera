@@ -98,20 +98,23 @@
                 </div>
 
                 <!-- geracao de imagem -->
-                <div>
-                    <video id="camera" autoplay></video>
-                    <div id="foto"></div>
+                <div id="geracaoImagem">
+                    <div id="cameraImagem">
+                        <video id="camera" autoplay></video>
+
+                        <div id="botoesPopup">
+                            <button class="botaoPopup" onclick="abrirCamera()">Abrir câmera</button>
+                            <button class="botaoPopup" onclick="fecharCamera()">Fechar câmera</button>
+
+                            <button class="botaoPopup" onclick="tirarFoto()">Tirar foto</button>
+                        </div>
+                    </div>
+
+                    <div id="areaFoto">
+                        <div id="foto"></div>
+                    </div>
+
                 </div>
-                
-                <div>
-                    <button class="botaoPopup" onclick="abrirCamera()">Abrir câmera</button>
-                    <button class="botaoPopup" onclick="fecharCamera()">Fechar câmera</button>
-
-                    <button class="botaoPopup" onclick="tirarFoto()">Tirar foto</button>
-                </div>
-
-
-
             </section>
 
             <!-- dashboard -->

@@ -2278,6 +2278,14 @@ circle:nth-child(2) {
     color: #fff;
 
     border: 2px #fff solid;
+    border-radius: 15px;
+
+    margin: 0px 10px;
+}
+
+#botoesPopup {
+    display: flex;
+    flex-direction: row;
 }
 
 #foto {
@@ -2287,9 +2295,36 @@ circle:nth-child(2) {
     background-size: cover;
     background-position: 50%;
     margin: 20px;
+
+    background-color: #000
 }
 
 #camera {
     width: 400px;
+    height: 300px;
     margin: 20px;
+
+    border-radius: 15px;
+
+    background-color: #000;
+
+    border-radius: 2px #fff solid;
+}
+
+#geracaoImagem {
+    display: flex;
+    flex-direction: row;
+}
+
+#cameraImagem {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#areaFoto {
+    display: flex;
+    flex-direction: column;
 }
