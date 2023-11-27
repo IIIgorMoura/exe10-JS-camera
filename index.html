@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MoneyMinds - Perfil</title>
+
+    <!-- link CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- scr FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/78f0f143f5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <section id="menuBurger">
+            <h2 id="titulo">MoneyMinds</h2>
+
+            <!-- perfil -->
+            <div onclick="exibirAlteracaoPerfil()" id="perfil">
+                <div id="perfil-img">
+
+                </div>
+                <p>Jean Lucindo</p>
+            </div>
+
+            <!-- opcoes -->
+            <!-- //dashboard -->
+            <a onclick="exibirDashboard()" class="opcao-menuBurger">
+                <div class="opcao-icone">
+                    <i class="fa-solid fa-chart-line fa-2xl"></i>
+                </div>
+                <p class="opcao-nome">Dashboard</p>
+            </a>
+
+            <!-- //meus cursos -->
+            <a onclick="exibirCursos()" class="opcao-menuBurger">
+                <div class="opcao-icone">
+                    <i class="fa-regular fa-pen-to-square fa-2xl"></i>
+                </div>
+                <p class="opcao-nome">Meus Cursos</p>
+            </a>
+
+            <!-- //ranking -->
+            <a onclick="exibirRanking()" class="opcao-menuBurger">
+                <div class="opcao-icone">
+                    <i class="fa-solid fa-ranking-star fa-2xl"></i>
+                </div>
+                <p class="opcao-nome">Ranking</p>
+            </a>
+
+            <!-- //atividades -->
+            <a onclick="exibirAtividades()" class="opcao-menuBurger">
+                <div class="opcao-icone">
+                    <i class="fa-solid fa-list fa-2xl"></i>
+                </div>
+                <p class="opcao-nome">Atividades pendentes</p>
+            </a>
+
+            <!-- //sair -->
+            <a href="../index.html" class="opcao-menuBurger" id="sair-menu">
+                <div class="opcao-icone">
+                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                </div>
+                <p class="opcao-nome">Sair</p>
+            </a>
+        </section>
+
+        <!-- corpo perfil -->
+        <nav id="principal-perfil">
+
+            <!-- alteracao perfil -->
+            <section class="secao" id="alteracaoPerfil" class="escondido">
+                <div onclick="popupFoto()" id="perfilInformacoesPrincipal">
+
+                    <div id="imagemPerfil">
+                        <img src="" alt="">
+                    </div>
+
+                    <h3>Jean Lucindo</h3>
+
+                </div>
+            </section>
+
+            <!-- alteracao imagem perfil -->
+            <section id="alteracaoPerfil-imagem">
+                <div id="headerPopUpFoto">
+                    <!-- botao sair -->
+                    <div onclick="fecharPopupFoto()" class="opcao-icone" id="botaoSairPopupFoto">
+                        <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                        <p class="opcao-nome">Sair</p>
+                    </div>
+
+
+                    <!-- titulo -->
+                    <h3>Insira uma imagem</h3>
+                </div>
+
+            </section>
+
+            <!-- dashboard -->
+            <section class="secao" id="dashboard">
+                <div id="container-progresso">
+                    <!-- progresso-investimentos -->
+                    <div onclick="progressoInvestimento()" class="box-progresso" id="progresso-investimentos">
+                        <h3>Investimento</h3>
+
+                        <div class="box-grafico-circulo">
+                            <svg class="circulo">
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="circuloProgressoInvestimento" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="porcentagem" id="porcentagemProgressoInvestimento">
+                                0%
+                            </div>
+                        </div>
+
+                        <button class="botaoDashboard">Continuar</button>
+
+                    </div>
+
+                    <!-- progresso tecnologia -->
+                    <div class="box-progresso" id="progresso-tecnologia">
+                        <h3>Tecnologia</h3>
+
+                        <div class="box-grafico-circulo">
+                            <svg class="circulo">
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="circuloProgressoTecnologia" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="porcentagem" id="porcentagemProgressoTecnologia">
+                                0%
+                            </div>
+                        </div>
+
+                        <button class="botaoDashboard">Continuar</button>
+
+                    </div>
+
+                    <!-- progresso marketing -->
+                    <div class="box-progresso" id="progresso-marketing">
+                        <h3>Marketing</h3>
+
+                        <div class="box-grafico-circulo">
+                            <svg class="circulo">
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="circuloProgressoMarketing" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="porcentagem" id="porcentagemProgressoMarketing">
+                                0%
+                            </div>
+                        </div>
+
+                        <button class="botaoDashboard">Continuar</button>
+
+                    </div>
+
+                    <!-- grafico -->
+                    <div class="box-progresso" id="grafico-dashboard">
+
+                    </div>
+
+                    <!-- atividades -->
+                    <div class="box-progresso" id="tarefas">
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- meus cursos -->
+            <section class="secao" id="cursos" class="escondido">
+
+                <div onmouseover="extenderInformacoes(); informacoesInvestimento()" onmouseleave="retrairInformações()"
+                    class="curso" id="cursoInvestimentos">
+                    <div class="informacoesCurso">
+                        <h3>Investimento</h3>
+
+                        <p class="informacoesTexto"></p>
+
+                        <button class="botaoDashboard">Continuar</button>
+                    </div>
+                </div>
+
+                <div onmouseover="informacoesTecnologia()" onmouseleave="retrairInformações()" class="curso"
+                    id="cursoTecnologia">
+                    <div class="informacoesCurso" id="infoTecnologia">
+                        <h3>Tecnologia</h3>
+
+                        <p class="informacoesTexto"></p>
+
+                        <button class="botaoDashboard">Continuar</button>
+                    </div>
+                </div>
+
+                <div onmouseover="extenderInformacoes(); informacoesMarkenting()" onmouseleave="retrairInformações()"
+                    class="curso" id="cursoMarketing">
+                    <div class="informacoesCurso">
+                        <h3>Marketing</h3>
+
+                        <p class="informacoesTexto"></p>
+
+                        <button class="botaoDashboard">Continuar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ranking -->
+            <section class="secao" id="ranking" class="escondido">
+                2
+            </section>
+
+            <!-- atividades -->
+            <section class="secao" id="atividades" class="escondido">
+                3
+            </section>
+        </nav>
+
+    </main>
+
+    <!-- script JS -->
+    <script src="main-perfil.js"></script>
+</body>
+
+</html>
