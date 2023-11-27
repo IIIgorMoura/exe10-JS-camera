@@ -93,11 +93,24 @@
                         <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
                         <p class="opcao-nome">Sair</p>
                     </div>
-
-
                     <!-- titulo -->
                     <h3>Insira uma imagem</h3>
                 </div>
+
+                <!-- geracao de imagem -->
+                <div>
+                    <video id="camera" autoplay></video>
+                    <div id="foto"></div>
+                </div>
+                
+                <div>
+                    <button class="botaoPopup" onclick="abrirCamera()">Abrir câmera</button>
+                    <button class="botaoPopup" onclick="fecharCamera()">Fechar câmera</button>
+
+                    <button class="botaoPopup" onclick="tirarFoto()">Tirar foto</button>
+                </div>
+
+
 
             </section>
 

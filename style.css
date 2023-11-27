@@ -2270,3 +2270,26 @@ circle:nth-child(2) {
 
     margin: 0px 10px;
 }
+
+.botaoPopup {
+    width: 100px;
+    height: 50px;
+    
+    color: #fff;
+
+    border: 2px #fff solid;
+}
+
+#foto {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 50%;
+    margin: 20px;
+}
+
+#camera {
+    width: 400px;
+    margin: 20px;
+}
